@@ -27,6 +27,8 @@ Plug 'saltstack/salt-vim'
 Plug 'stephpy/vim-yaml'
 Plug 'fatih/vim-go'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'Chiel92/vim-autoformat'
 
 " Code folding for Python
 Plug 'tmhedberg/SimpylFold'
@@ -91,6 +93,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
+let NERDTreeShowHidden =1
 
 " Syntax checker options
 let g:flake8_ignore="E128,E501"
