@@ -1,6 +1,6 @@
-" File ~/.nvimrc
+" File ~/.vimrc
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/vim/plugged')
 
 Plug 'tpope/vim-sensible'
 
@@ -139,9 +139,9 @@ let g:airline_powerline_fonts = 1
 set number
 
 " Where swap and backup files go
-set backupdir=~/.config/nvim/backup_files//
-set directory=~/.config/nvim/swap_files//
-set undodir=~/.config/nvim/undo_files//
+set backupdir=~/.config/vim/backup_files//
+set directory=~/.config/vim/swap_files//
+set undodir=~/.config/vim/undo_files//
 
 " Vim-Golang plugin configs
 let g:go_highlight_functions = 1
