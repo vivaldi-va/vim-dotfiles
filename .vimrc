@@ -95,7 +95,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
 let NERDTreeShowHidden =1
-au VimEntere * NERDTree
+au VimEnter * NERDTree
 
 " Syntax checker options
 let g:flake8_ignore="E128,E501"
