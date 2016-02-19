@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'kshenoy/vim-signature'
+Plug 'mattn/emmet-vim'
 
 " In-file searching ala 'ack'
 Plug 'gabesoft/vim-ags'
@@ -94,6 +95,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
 let NERDTreeShowHidden =1
+au VimEntere * NERDTree
 
 " Syntax checker options
 let g:flake8_ignore="E128,E501"
