@@ -30,6 +30,7 @@ Plug 'fatih/vim-go'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'Chiel92/vim-autoformat'
+Plug 'mutewinter/nginx.vim'
 
 " Code folding for Python
 Plug 'tmhedberg/SimpylFold'
@@ -116,6 +117,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
 let g:syntastic_python_flake8_args='--ignore=E501,E128'
+let g:syntastic_javascript_checkers=['jscs', 'eslint']
 
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 hi SpellBad ctermfg=15 ctermbg=9 guifg=White guibg=Red
@@ -139,6 +141,17 @@ let g:airline_powerline_fonts = 1
 
 " Line numbers
 set number
+
+filetype plugin indent on
+
+" show existing tab with 4 spaces
+set tabstop=2
+
+" when indenting with '>', use 2 spaces
+set shiftwidth=2
+
+" on pressing tab, insert 4 spaces
+set expandtab
 
 " Where swap and backup files go
 set backupdir=~/.config/vim/backup_files//
