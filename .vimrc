@@ -84,6 +84,12 @@ noremap <C-p> :FZF<CR>
 " Tagbar/ctags
 nmap <F2> :TagbarToggle<CR>
 
+" General code style settings
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
 " Python specific configs
 """""""""""""""""""""""""
 
