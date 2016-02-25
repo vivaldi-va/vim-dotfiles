@@ -122,10 +122,29 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['pep8', 'flake8']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
 let g:syntastic_python_flake8_args='--ignore=E501,E128'
-let g:syntastic_javascript_checkers=['jscs', 'eslint', 'jshint']
+
+" Load checkers which have configuration present
+function! JavascriptCheckers()
+  let checkers = []
+  if filereadable(getcwd() . '/.jscsrc')
+    call add(checkers, 'jscs')
+  endif
+
+  if filereadable(getcwd() . '/.jshintrc')
+    call add(checkers, 'jshint')
+  endif
+
+  if filereadable(getcwd() . '/.eslintrc')
+    call add(checkers, 'eslint')
+  endif
+  return checkers
+endfunction
+
+"let g:syntastic_javascript_checkers=['jscs', 'eslint', 'jshint']
+let g:syntastic_javascript_checkers=JavascriptCheckers()
 
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 hi SpellBad ctermfg=15 ctermbg=9 guifg=White guibg=Red
@@ -152,14 +171,6 @@ set number
 
 filetype plugin indent on
 
-" show existing tab with 4 spaces
-" set tabstop=2
-
-" when indenting with '>', use 2 spaces
-" set shiftwidth=2
-
-" on pressing tab, insert 4 spaces
-" set expandtab
 
 " Where swap and backup files go
 set backupdir=~/.config/vim/backup_files//
