@@ -40,7 +40,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
  - Next, get my vim-dotfiles & symlink the `.vimrc` to your `$HOME/.vimrc`:
 
 ```sh
-$ git clone git@github.com:jperras/vim-dotfiles.git ~/.vim && ln -s ~/.vim/.vimrc ~/.vimrc
+$ git clone git@github.com:vivaldi-va/vim-dotfiles.git ~/.vim && ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
  - There are several extensions required to make some extensions function
@@ -65,6 +65,13 @@ sane defaults for most developers. Feel free to modify at will, of course. See t
 comments in the `.vimrc` file for more details, and check out the individual
 bundles that are pulled in on github until I decide to annotate & comment on
 what each of them do.
+
+
+### OSX
+
+To get airline icons working properly, you need to install one of the patched fonts from
+Powerline's font [repository](https://github.com/powerline/fonts) and set it as the terminal's typeface.
+
 
 ## Screenshot
 

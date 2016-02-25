@@ -95,6 +95,12 @@ autocmd FileType python setlocal colorcolumn=80
 " Omnifunc for python
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
+" JavaScript specific configs
+"""""""""""""""""""""""""""""
+
+autocmd FileType javascript setlocal shiftwidth=2 expandtab tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal colorcolumn=80
+
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
 let NERDTreeShowHidden =1
@@ -116,10 +122,10 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['pep8', 'flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
 let g:syntastic_python_flake8_args='--ignore=E501,E128'
-let g:syntastic_javascript_checkers=['jscs', 'eslint']
+let g:syntastic_javascript_checkers=['jscs', 'eslint', 'jshint']
 
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 hi SpellBad ctermfg=15 ctermbg=9 guifg=White guibg=Red
@@ -147,13 +153,13 @@ set number
 filetype plugin indent on
 
 " show existing tab with 4 spaces
-set tabstop=2
+" set tabstop=2
 
 " when indenting with '>', use 2 spaces
-set shiftwidth=2
+" set shiftwidth=2
 
 " on pressing tab, insert 4 spaces
-set expandtab
+" set expandtab
 
 " Where swap and backup files go
 set backupdir=~/.config/vim/backup_files//
