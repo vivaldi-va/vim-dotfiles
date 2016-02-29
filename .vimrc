@@ -37,6 +37,9 @@ Plug 'leshill/vim-json'
 " Code folding for Python
 Plug 'tmhedberg/SimpylFold'
 
+" Javascript stuff
+Plug 'heavenshell/vim-jsdoc'
+
 " Ctags tagbar
 Plug 'majutsushi/tagbar'
 
@@ -106,6 +109,11 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 autocmd FileType javascript setlocal shiftwidth=2 expandtab tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal colorcolumn=80
+
+" JSDoc config
+
+let g:jsdoc_enable_es6=1
+
 
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
