@@ -107,8 +107,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " JavaScript specific configs
 """""""""""""""""""""""""""""
 
-autocmd FileType javascript setlocal shiftwidth=2 expandtab tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal colorcolumn=80
+autocmd FileType javascript setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal colorcolumn=99
 
 " JSDoc config
 
@@ -135,6 +135,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
