@@ -152,14 +152,27 @@ function! JavascriptCheckers()
     call add(checkers, 'jshint')
   endif
 
-  if filereadable(getcwd() . '/.eslintrc')
+  " look for the closest eslintrc file up the tree
+  if findfile('.eslintrc', '.;') != ''
+    echo "adding eslint"
     call add(checkers, 'eslint')
   endif
+
+  " Use the locally installed eslint if it exists
+  if findfile(getcwd() . '/node_modules/.bin/eslint') != ''
+    echo "using local eslint"
+    let b:syntastic_javascript_eslint_exec = getcwd() . '/node_modules/.bin/eslint'
+  endif
+
   return checkers
 endfunction
 
+if findfile(getcwd() . '/node_modules/.bin/eslint') != ''
+  let b:syntastic_javascript_eslint_exec = getcwd() . '/node_modules/.bin/eslint'
+endif
 "let g:syntastic_javascript_checkers=['jscs', 'eslint', 'jshint']
-let g:syntastic_javascript_checkers=JavascriptCheckers()
+let g:syntastic_javascript_checkers=[]
+autocmd FileType javascript let b:syntastic_checkers = JavascriptCheckers()
 
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 hi SpellBad ctermfg=15 ctermbg=9 guifg=White guibg=Red
