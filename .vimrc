@@ -6,6 +6,7 @@ Plug 'tpope/vim-sensible'
 
 " General
 Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
@@ -16,6 +17,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
 
 " In-file searching ala 'ack'
 Plug 'gabesoft/vim-ags'
@@ -67,6 +69,7 @@ let mapleader = ","
 
 " Ignore case in search
 set ignorecase!
+set hlsearch
 
 " Only hide buffers when changing between them;
 " this way we can keep their undo histories.
@@ -119,6 +122,7 @@ let g:jsdoc_enable_es6=1
 let NERDTreeIgnore = ['\.pyc$', '\.egg$', '\.o$', '\~$', '__pycache__$', '\.egg-info$']
 let NERDTreeShowHidden =1
 au VimEnter * NERDTree
+au VimEnter * NERDTreeTabsOpen
 
 " Syntax checker options
 let g:flake8_ignore="E128,E501"
@@ -140,6 +144,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
 let g:syntastic_python_flake8_args='--ignore=E501,E128'
+let g:syntastic_scss_checkers = ['scss_lint']
 
 " Load checkers which have configuration present
 function! JavascriptCheckers()
