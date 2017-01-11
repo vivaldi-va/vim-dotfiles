@@ -61,6 +61,13 @@ call plug#end()
 set background=dark
 colorscheme gruvbox
 
+" highlight current window
+augroup BgHighlight
+  autocmd!
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
+augroup END
+
 " All key mappings
 """"""""""""""""""
 
