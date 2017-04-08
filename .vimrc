@@ -35,6 +35,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'mutewinter/nginx.vim'
 Plug 'othree/html5.vim'
 Plug 'leshill/vim-json'
+Plug 'digitaltoad/vim-pug'
+Plug 'ekalinin/Dockerfile.vim'
 
 " Code folding for Python
 Plug 'tmhedberg/SimpylFold'
